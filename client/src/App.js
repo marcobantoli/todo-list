@@ -1,5 +1,13 @@
+import InputSection from './InputSection';
+import TodoList from './TodoList';
+
 function App() {
-  return null;
+  return (
+    <>
+      <InputSection />
+      <TodoList />
+    </>
+  );
 }
 
 export default App;
