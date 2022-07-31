@@ -33,7 +33,7 @@ app.put('/todos/:id', async (req, res) => {
     const description = req.body.description;
     const id = req.params.id;
     await pool.query('UPDATE todo SET description = $1 WHERE todo_id = $2', [description, id]);
-    res.json('Todo was updated!');
+    res.sendStatus(204);
   } catch (err) {
     console.log(err);
   }
@@ -44,7 +44,7 @@ app.delete('/todos/:id', async (req, res) => {
   try {
     const id = req.params.id;
     await pool.query('DELETE FROM todo WHERE todo_id=$1', [id]);
-    res.json('Todo was deleted!');
+    res.sendStatus(204);
   } catch (err) {
     console.log(err);
   }
