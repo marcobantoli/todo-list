@@ -1,7 +1,8 @@
 import React from 'react';
+import Todo from './Todo';
 import './TodoList.css';
 
-function TodoList({ todos }) {
+function TodoList({ todos, handleDelete, handleEdit }) {
   return (
     <>
       <div className="header-container">
@@ -10,7 +11,7 @@ function TodoList({ todos }) {
         <div>Delete</div>
       </div>
       <ul>
-        {todos}
+        {todos.map(todo => <Todo key={todo.todo_id} id={todo.todo_id} desc={todo.description} handleDelete={handleDelete} handleEdit={handleEdit} />)}
       </ul>
     </>
   );
