@@ -1,14 +1,16 @@
-import React from 'react'
-import Todo from './Todo';
+import React from 'react';
+import './TodoList.css';
 
-function TodoList() {
+function TodoList({ todos }) {
   return (
     <>
-      <div>Description</div>
-      <div>Edit</div>
-      <div>Delete</div>
+      <div className="header-container">
+        <div>Description</div>
+        <div>Edit</div>
+        <div>Delete</div>
+      </div>
       <ul>
-        <Todo />
+        {todos}
       </ul>
     </>
   );

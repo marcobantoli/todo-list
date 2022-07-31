@@ -1,12 +1,13 @@
 import React from 'react'
+import './Todo.css';
 
-function Todo() {
+function Todo({ desc }) {
   return (
-    <>
-      <div className="description">Example todo</div>
+    <li className="todo-container">
+      <div className="description">{desc}</div>
       <button>Edit</button>
       <button>Delete</button>
-    </>
+    </li>
   );
 }
 
