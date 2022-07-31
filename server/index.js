@@ -2,14 +2,16 @@ const express = require('express');
 const pool = require('./db.js');
 
 const app = express();
+app.use(express.json());
 const PORT = 3001;
 
 // Create
 app.post('/todos', async (req, res) => {
   try {
     const description = req.body.description;
-    const newTodo = await pool.query('INSERT INTO todo(todo_id, description) VALUES(DEFAULT, $1)', [description]);
-    res.json(newTodo);
+    const newTodo = await pool.query('INSERT INTO todo(todo_id, description) VALUES(DEFAULT, $1) RETURNING *', 
+      [description]);
+    res.json(newTodo.rows[0]);
   } catch (err) {
     console.log(err);
   }
