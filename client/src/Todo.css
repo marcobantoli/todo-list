@@ -1,5 +1,64 @@
 .todo-container {
-  display: flex;
-  flex-direction: row;
-  gap: 5em;
+  display: grid;
+  grid-template-columns: 500px 100px 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  height: 2em;
+}
+
+.edit-button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  width: 50%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: yellow;
+}
+
+.del-button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  width: 70%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: red;
+  color: white;
+}
+
+.edit-button:hover {
+  animation-name: edit-button-hover;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.del-button:hover {
+  animation-name: del-button-hover;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.edit-text-field {
+  width: 95%;
+}
+
+@keyframes edit-button-hover {
+  from {
+    width: 50%;
+    filter: opacity(100%);
+  }
+  to {
+    width: 60%;
+    filter: opacity(70%);
+  }
+}
+
+@keyframes del-button-hover {
+  from {
+    width: 70%;
+    filter: opacity(100%);
+  }
+  to {
+    width: 80%;
+    filter: opacity(70%);
+  }
 }

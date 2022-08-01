@@ -1,3 +1,49 @@
 .input-container {
-  margin-bottom: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+h1 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.7em;
+  font-weight: 800;
+}
+
+.text-field {
+  width: 50em;
+  height: 2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.add-button {
+  background-color: #4F7942;
+  border-radius: 3px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 2.5em;
+  width: 7%;
+}
+
+.add-button:hover {
+  animation-name: add-button-hover;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.add-section {
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes add-button-hover {
+  from {
+    filter: opacity(100%);
+    width: 7%;
+  }
+  to {
+    filter: opacity(70%);
+    width: 8%;
+  }
 }

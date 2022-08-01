@@ -15,9 +15,9 @@ function InputSection({ handleAddTodo }) {
   return (
     <div className="input-container">
       <h1>Input Todo</h1>
-      <div>
-        <input ref={inputEl} type="text" placeholder="Add todo" />
-        <button onClick={() => helper()} type="button">Add</button>
+      <div className="add-section">
+        <input className="text-field" ref={inputEl} type="text" placeholder="Add todo" />
+        <button className="add-button" onClick={() => helper()} type="button">Add</button>
       </div>
     </div>
   );

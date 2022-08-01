@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './Todo.css';
 
 function Todo({ id, desc, handleDelete, handleEdit }) {
@@ -12,9 +12,9 @@ function Todo({ id, desc, handleDelete, handleEdit }) {
 
   return (
     <li className="todo-container">
-      {isEditing ? <input onKeyDown={helper} type="text" /> : <div className="description">{desc}</div>}
-      <button type="button" onClick={() => setIsEditing(true)}>Edit</button>
-      <button type="button" onClick={() => handleDelete(id)}>Delete</button>
+      {isEditing ? <input className="edit-text-field" defaultValue={desc} onKeyDown={helper} type="text" /> : <div className="description">{desc}</div>}
+      <button className="edit-button" type="button" onClick={() => setIsEditing(true)}>Edit</button>
+      <button className="del-button" type="button" onClick={() => handleDelete(id)}>Delete</button>
     </li>
   );
 }
